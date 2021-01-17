@@ -49,10 +49,12 @@ module "ec2_instances" {
   }
 }
     
-    module "website_s3_bucket" {
-  source = "./modules/aws-s3-static-website-bucket"
-
-  bucket_name = "module"
+  
+      
+module "s3-bucket_example_complete" {
+  source  = "terraform-aws-modules/s3-bucket/aws//examples/complete"
+  version = "1.17.0"
+   bucket_name = "module"
 
   tags = {
     Terraform   = "true"
