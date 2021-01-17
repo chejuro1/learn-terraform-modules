@@ -43,10 +43,7 @@ module "ec2_instances" {
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
 
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
+ 
 }
     
   
