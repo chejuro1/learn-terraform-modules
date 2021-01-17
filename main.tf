@@ -54,7 +54,13 @@ module "ec2_instances" {
 module "s3-bucket_example_complete" {
   source  = "terraform-aws-modules/s3-bucket/aws//examples/complete"
   version = "1.17.0"
-   bucket_name = "module"
+    bucket = "module"
+    acl    = "private"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 
   
 }
