@@ -1,7 +1,7 @@
 # Terraform configuration
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-2"
 }
 
 module "vpc" {
@@ -24,7 +24,7 @@ module "ec2_instances" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "2.12.0"
 
-  name           = "my-ec2-cluster"
+  name           = "my-ec2-cluster1"
   instance_count = 2
 
   ami                    = "ami-0c5204531f799e0c6"
@@ -41,7 +41,7 @@ module "ec2_instances" {
 module "website_s3_bucket" {
   source = "./modules/aws-s3-static-website-bucket"
 
-  bucket_name = "<UNIQUE BUCKET NAME>"
+  bucket_name = "module"
 
   tags = {
     Terraform   = "true"
