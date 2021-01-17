@@ -42,7 +42,10 @@ module "ec2_instances" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.public_subnets[0]
-
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
  
 }
     
@@ -53,8 +56,5 @@ module "s3-bucket_example_complete" {
   version = "1.17.0"
    bucket_name = "module"
 
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
+  
 }
