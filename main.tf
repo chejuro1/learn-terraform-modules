@@ -1,11 +1,9 @@
 # Terraform configuration
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-2"
   
   ## v Everything between the comments is localstack specific v
-  access_key                  = "anaccesskey"
-  secret_key                  = "asecretkey"
   s3_force_path_style         = true
   skip_credentials_validation = true
   skip_metadata_api_check     = true
